@@ -1,22 +1,13 @@
 import { defineConfig } from 'vitepress'
 import { scanDir } from './utils/sidebar'
-import path from 'path'
 
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
 
-  vite: {
-    resolve: {
-      alias: {
-        '~bootstrap': path.resolve(__dirname, '../node_modules/bootstrap'),
-      }
-    }
-  },
-
-
-  title: "CodeWorks WebDev Fundamentals",
-  description: "",
+  vite: {},
+  title: "CodeWorks Academy AWS Crash Course",
+  description: "A quick guide to hosting web applications in AWS for CodeWorks Students",
   cleanUrls: false, // ANCHOR might break something later
   head: [
     ['link', { rel: 'icon', href: 'https://bcw.blob.core.windows.net/public/img/9977764104160066' }]

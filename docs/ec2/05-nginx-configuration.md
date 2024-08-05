@@ -20,7 +20,7 @@ If any of these assumptions are missing, refer to the following guides:
 
 * [Setting up Your Domain with Cloudflare](/docs/cloudflare/00-cloudflare-overview)
 * [Connecting Cloudflare SSL Certificates on an EC2 Instance](/docs/cloudflare/01-cloudflare-ssl)
-* [Dockerizing and Hosting a Web Application on an EC2 Instance](/docs/docker/01-application-dockerization)
+* [Dockerizing and Hosting a Web Application on an EC2 Instance](/docs/docker/00-docker-overview)
 
 ## Configuring Nginx
 

@@ -17,7 +17,7 @@ Apart from the initial setup, you will need to update your EC2 instance regularl
 
 To update an EC2 instance, follow these steps:
 
-1. Connect to your EC2 instance using SSH. If you need help with this step, refer to the [Connecting to an EC2 Instance](/docs/ec2/02-connecting) guide.
+1. Connect to your EC2 instance using SSH. If you need help with this step, refer to the [Connecting to an EC2 Instance](/docs/ec2/02-connecting-to-ec2) guide.
 
 2. Update the package list on your EC2 instance by running the following command:
 

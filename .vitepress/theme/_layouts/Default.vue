@@ -125,9 +125,7 @@ function toggleSidebar() {
   max-width: 50vw;
 }
 
-.hide-sidebar .VPContent .aside{
+.hide-sidebar .VPContent .aside {
   display: none !important;
 }
-
-
 </style>

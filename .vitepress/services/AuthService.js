@@ -1,9 +1,8 @@
 import { AUTH_EVENTS, initialize } from "@bcwdev/auth0provider-client"
-import { AuthPlugin } from "@bcwdev/auth0provider-client/lib/Auth0Provider.js"
 import { AppState } from "../AppState.js"
 
 /**
- * @type {AuthPlugin}
+ * @type {import('@bcwdev/auth0provider-client').Auth0Provider}
  */
 let AuthService = null
 

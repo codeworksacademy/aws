@@ -7,7 +7,6 @@ import Layout from './_layouts/Default.vue'
 import AccountDetails from './components/Account.vue'
 import CourseStore from './components/CourseStore.vue'
 import LoginButton from './components/LoginButton.vue'
-import 'bootstrap'
 import '@mdi/font/css/materialdesignicons.min.css'
 
 export default {
@@ -17,10 +16,6 @@ export default {
     app.component('AccountPage', AccountDetails)
     app.component('LoginButton', LoginButton)
     app.component('CourseStore', CourseStore)
-
-    const rootElement = document.documentElement
-    rootElement.setAttribute('data-bs-theme', 'dark')
-
   }
 }
 
