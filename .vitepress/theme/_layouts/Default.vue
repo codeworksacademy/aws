@@ -68,6 +68,10 @@ function toggleSidebar() {
   padding: 0 10px;
 }
 
+.VPNav, .VPSidebar{
+  background-color: var(--vp-nav-bg-color) !important;
+}
+
 .logo {
   object-fit: contain;
 }
