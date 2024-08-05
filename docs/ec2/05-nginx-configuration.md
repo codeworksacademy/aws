@@ -18,8 +18,8 @@ Before you can configure Nginx on an EC2 instance, you need to have the followin
 
 If any of these assumptions are missing, refer to the following guides:
 
-* [Setting up Your Domain with Cloudflare](/docs/cloudflare/01-setting-up-your-domain)
-* [Connecting Cloudflare SSL Certificates on an EC2 Instance](/docs/cloudflare/02-ssl-on-ec2)
+* [Setting up Your Domain with Cloudflare](/docs/cloudflare/00-cloudflare-overview)
+* [Connecting Cloudflare SSL Certificates on an EC2 Instance](/docs/cloudflare/01-cloudflare-ssl)
 * [Dockerizing and Hosting a Web Application on an EC2 Instance](/docs/docker/01-application-dockerization)
 
 ## Configuring Nginx
@@ -40,7 +40,7 @@ cd /etc/nginx/sites-available
 sudo nano mywebapp
 ```
 
-4. In the Nano text editor, add the following configuration block for your web application: Be sure to replace `<your-domain>`,  `<subdomain>`, and `<APPLICATION_PORT>` with your actual domain name, subdomain, and application port. Take note of the highlighted lines in the code block below for customization.
+4. In the Nano text editor, add the following configuration block for your web application: Be sure to replace `<your-domain>`,   `<subdomain>`, and `<APPLICATION_PORT>` with your actual domain name, subdomain, and application port. Take note of the highlighted lines in the code block below for customization.
 
 ```nginx
 server {
@@ -93,7 +93,48 @@ sudo nginx -t
 sudo systemctl reload nginx
 ```
 
+
+## Installing External SSL Certificates
+
+> [First time Domain Setup](/docs/cloudflare/00-cloudflare-overview)
+
+If you are using an external SSL certificate provider, you will need to install the SSL certificate and key on your EC2 instance. You can do this by following these steps:
+
+1. Copy the SSL certificate and key files to your EC2 instance.
+  - If you are logged in to your EC2 instance, you can use the `scp` command to copy the files from your local machine to your EC2 instance. Replace `<path-to-cert>` and `<path-to-key>` with
+  - Using the `scp` command. Replace `<path-to-cert>` and `<path-to-key>` with the paths to your SSL certificate and key files.
+
+```bash
+scp -i <path-to-key-pair> <path-to-cert> ubuntu@<your-ec2-public-ip>:/etc/ssl/cert.pem
+scp -i <path-to-key-pair> <path-to-key> ubuntu@<your-ec2-public-ip>:/etc/ssl/key.pem
+```
+
+2. Update the SSL certificate and key paths in the Nginx configuration file by editing the file with the `nano` command:
+
+```bash
+sudo nano /etc/nginx/sites-available/mywebapp
+```
+
+3. Update the `ssl_certificate` and `ssl_certificate_key` lines with the correct paths to your SSL certificate and key files.
+
+4. Save and exit the Nano text editor by pressing `Ctrl + X`, then `Y`, and finally `Enter`.
+
+5. Test the Nginx configuration for syntax errors by running the following command:
+
+```bash
+sudo nginx -t
+```
+
+![image](/images/image18.png)
+
+
+
 Before you can access your web application, you need to configure your domain name to point to your EC2 instance's public IP address. You can do this by updating the DNS records for your domain name in your DNS provider's control panel.
+
+
+
+
+
 
 <details>
 <summary>Configuring Route 53 for Your Domain</summary>

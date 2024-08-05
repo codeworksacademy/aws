@@ -28,6 +28,7 @@ export default defineConfig({
   },
   appearance: 'force-dark',
   outDir: './dist',
+  base: '/aws/',
   themeConfig: {
     siteTitle: false,
     search: {

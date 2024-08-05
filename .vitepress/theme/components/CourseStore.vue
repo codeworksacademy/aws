@@ -55,7 +55,7 @@
             <!-- COURSE MEDIA -->
             <div class="hero-media">
               <img
-                :src="course.img"
+                src="/course-logo.png"
                 alt="course image"
                 loading="lazy"
               >

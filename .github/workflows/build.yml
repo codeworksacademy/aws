@@ -1,41 +1,21 @@
-name: Static Build
-
-on:
-  push:
-    branches:
-      - main
-
+name: Build and Deploy
+on: [push]
+permissions:
+  contents: write
 jobs:
-  deploy-client:
+  build-and-deploy:
+    concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository 👀
+      - name: Checkout 🛎️
         uses: actions/checkout@v4
 
-      - name: Setup Node.js 🚀
-        uses: actions/setup-node@v4
-        with:
-          node-version: "latest"
-
-      - name: NPM Cleanup🧹
+      - name: Install and Build 🔧 
         run: |
-          npm cache clean --force
-          rm -rf node_modules
-          rm package-lock.json
-          npm install
-
-      - name: Build the Client 🏗️
-        run: |
+          npm ci
           npm run build
 
-      - name: Pushes to another repository
-        uses: cpina/github-action-push-to-another-repository@main
-        env:
-          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          source-directory: "dist"
-          destination-github-username: "${{ secrets.GH_USERNAME }}"
-          destination-repository-name: "${{ secrets.GH_REPO }}"
-          user-email: ${{ secrets.GH_EMAIL }}
-          target-branch: main
+          folder: dist # The folder the action should deploy.
