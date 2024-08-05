@@ -1,0 +1,35 @@
+{
+  "root": true,
+  "env": {
+    "node": true,
+    "mocha": true,
+    "es6": true,
+    "browser": true
+  },
+  "parser": "vue-eslint-parser",
+  "parserOptions": {
+    "ecmaVersion": "latest"
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:vue/vue3-recommended"
+  ],
+  "ignorePatterns": [
+    "temp",
+    "cache",
+    "dist",
+    "_site",
+    "!.vitepress"
+  ],
+  "rules": {
+    "no-unused-vars": 1,
+    "no-console": "warn",
+    "no-debugger": "warn",
+    "space-before-function-paren": [
+      1,
+      "never"
+    ],
+    "vue/html-self-closing": 0,
+    "vue/multi-word-component-names": "off"
+  }
+}

@@ -1,0 +1,27 @@
+@import "~bootstrap/scss/bootstrap";
+
+body {
+  background-color: unset;
+  color: unset;
+}
+a {
+  color: unset;
+  text-decoration: unset;
+}
+p {
+  color: unset;
+  margin: unset;
+}
+
+.on-hover {
+  opacity: 0;
+  transition: all 0.3s linear;
+}
+
+*:hover > .on-hover {
+  opacity: 1;
+}
+
+.no-highlight {
+  user-select: none;
+}
