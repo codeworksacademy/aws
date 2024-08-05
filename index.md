@@ -18,10 +18,10 @@ hero:
 features:
   - title: EC2 Instances
     details: Learn how to create and manage EC2 instances from the ground up.
-    link: /docs/web-foundations/00-overview
+    link: /docs/ec2/00-ec2-overview
   - title: S3 Buckets
     details: Enhance your web development skills by learning how to create and manage S3 buckets.
-    link: /docs/javascript-basics/00-javascript-overview
+    link: /docs/s3/00-s3-overview
   - title: Tips and Tricks
     details: Discover useful tips and tricks to enhance your web development skills and productivity.
     link: /docs/tips/00-overview

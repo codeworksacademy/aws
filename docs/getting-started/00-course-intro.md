@@ -1,27 +1,28 @@
-![course-logo](https://codeworkslearn.blob.core.windows.net/public/651dc81eae390961ceebd8cd/html-js-css.png)
+![course-logo](/course-logo.png)
 
-# Welcome to the Web Foundations Course
-
-<Editor src="https://github.com/CodeWorks-FullStack/summer24_zoo_keeper" />
+# Welcome to the CodeWorks Academy AWS Crash Course!
 
 ## Course Description
 
-This course is designed to introduce students to the fundamental concepts of web development. Throughout this course, students will learn the basics of HTML, CSS, and JavaScript, as well as how to use Git and GitHub for version control. By the end of the course, students will have a solid foundation in web development and be ready to dive into the bootcamp curriculum.
+This course is designed to give you a solid foundation in AWS services and how to use them to build and deploy web applications. You will learn how to create and manage EC2 instances, S3 buckets, and more. By the end of this course, you will have the skills and knowledge to build and deploy web applications using AWS.
 
 ## Course Breakdown
 
-The way this course is structured is to provide a solid foundation in web development. The topics in this course are broken down into outlines and assignments. The outlines provide an overview of the topics covered in each chapter, while the assignments provide hands-on practice to reinforce the concepts learned in the chapter. At the end of each chapter, there is a checkpoint assignment that will test the student's understanding of the material covered in the chapter. Checkpoints are designed to help students gauge their progress and identify areas where they may need additional practice.
+This guide is designed to help you get started with the AWS Crash Course. It will walk you through the basics of setting up your AWS account, creating and managing EC2 instances, and deploying web applications using AWS services. This guide also includes guides on managing domains with Cloudflare, customizing your DNS, setting up SSL certificates, and more.
 
 ### Goals
 
-* Introduction to Standard Development Practices and Tools
-* Web Development Intro
-* Why Git Version Control
-* HTML/CSS Basics
-* Bootstrap
-* Figma
-* Responsive Design
-* Mobile-First design and adaptation
-* Identify the importance of UX/UI
-* Accessibility
-* Introduction to JavaScript
+* Learn how to create and manage EC2 instances
+* Learn how to create and manage S3 buckets
+* Learn how to deploy web applications using AWS services
+* Learn how to manage domains with Cloudflare
+* Learn how to customize your DNS
+* Learn how to set up SSL certificates
+* Use Docker to containerize your application and deploy it to AWS
+* Setup a CI/CD pipeline for your web applications with GitHub Actions
+
+### Prerequisites
+
+* Basic knowledge of web development
+* Basic knowledge of Git and GitHub
+* Basic knowledge of the command line

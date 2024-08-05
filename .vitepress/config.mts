@@ -51,14 +51,24 @@ export default defineConfig({
         collapsed: false
       },
       {
-        text: 'Web Foundations',
-        items: scanDir('docs/web-foundations'),
+        text: 'EC2 - Elastic Compute Cloud',
+        items: scanDir('docs/ec2'),
         collapsed: false
       },
       {
-        text: 'JavaScript Basics',
-        items: scanDir('docs/javascript-basics'),
-        collapsed: false
+        text: 'S3 - Simple Storage Service',
+        items: scanDir('docs/s3'),
+        collapsed: true
+      },
+      {
+        text: 'Cloudflare CDN',
+        items: scanDir('docs/cloudflare'),
+        collapsed: true
+      },
+      {
+        text: '🐳 Docker',
+        items: scanDir('docs/docker'),
+        collapsed: true
       },
       {
         text: 'Quick Tips',
