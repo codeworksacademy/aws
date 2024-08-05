@@ -1,19 +1,11 @@
 <template>
   <div>
-    <button
-      v-if="!user"
-      title="Sign in to access the course."
-      @click="login()"
-    >
+    <button v-if="!user" title="Sign in to access the course." @click="login()">
       <strong class="t-gradient t-1 fs-6">
         Sign In
       </strong>
     </button>
-    <button
-      v-else
-      title="Sign out of the course."
-      @click="logout()"
-    >
+    <button v-else title="Sign out of the course." @click="logout()">
       <span class="t-gradient t-2 fs-6">
         Logout
       </span>
@@ -29,12 +21,12 @@ import { AuthWrapper } from '../../services/AuthService.js';
 let AuthService = null
 const user = computed(() => AppState.user)
 
-onMounted(async() => {
+onMounted(async () => {
   AuthService = await AuthWrapper()
 })
 
 async function login() {
-  AuthService.loginWithPopup();
+  AuthService.loginWithRedirect();
 }
 async function logout() {
   AuthService.logout();

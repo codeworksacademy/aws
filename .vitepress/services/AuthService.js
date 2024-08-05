@@ -1,9 +1,6 @@
 import { AUTH_EVENTS, initialize } from "@bcwdev/auth0provider-client"
 import { AppState } from "../AppState.js"
 
-/**
- * @type {import('@bcwdev/auth0provider-client').Auth0Provider}
- */
 let AuthService = null
 
 export async function AuthWrapper() {
@@ -11,14 +8,13 @@ export async function AuthWrapper() {
   const domain = 'codeworksacademy.auth0.com'
   const clientId = 'Pr738Hn5ZZhYYahOhTukx3phzlIPGCfl'
   const audience = 'https://codeworksacademy.com'
-  let redirect_uri = window.location.origin
-
+  let redirect_uri = window.location.href
   AuthService = initialize({
     clientId,
     domain,
     authorizationParams: {
       audience,
-      redirect_uri
+      redirect_uri,
     }
   })
 
