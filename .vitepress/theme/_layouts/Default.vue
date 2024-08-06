@@ -18,6 +18,7 @@ let AuthService = null
 onMounted(async () => {
   isSidebarOpen.value = JSON.parse(loadState('sidebar'))
   if (isSidebarOpen.value === null || isSidebarOpen.value === undefined) {
+
     isSidebarOpen.value = true
   }
 
@@ -68,7 +69,8 @@ function toggleSidebar() {
   padding: 0 10px;
 }
 
-.VPNav, .VPSidebar{
+.VPNav,
+.VPSidebar {
   background-color: var(--vp-nav-bg-color) !important;
 }
 

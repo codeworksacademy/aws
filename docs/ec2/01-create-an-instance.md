@@ -109,8 +109,7 @@ To create an EC2 instance, follow these steps:
 * **Note:** This will be used in multiple places
   + EC2_IP_ADDRESS GitHub repository secret
 
-<details>
-<summary>Setting up Elastic IP</summary>
+::: details 🥑 Setting up Elastic IP
 
 ### Bonus [optional] Set up a static IP through **EC2’s Elastic IP**
 
@@ -137,10 +136,9 @@ Verify your EC2 instance has the new Elastic IP allocation associated on the `In
 
 * **Improved Security** - By using an Elastic IP, you can restrict access to your EC2 instance to only allow traffic from specific IP addresses.
 
-</details>
+:::
 
-<details>
-<summary>Create and EC2 from the CLI</summary>
+::: details 🥑 Create and EC2 from the CLI
 
 ### Bonus [optional] Create an EC2 instance from the CLI
 
@@ -150,7 +148,7 @@ Verify your EC2 instance has the new Elastic IP allocation associated on the `In
 aws ec2 run-instances --image-id ami-0c55b159cbfafe1f0 --instance-type t2.micro --key-name MyWebAppServerKeyPair --security-group-ids sg-0b1f3b3b1c3b1b3b --subnet-id subnet-0b1f3b3b1c3b1b3b --associate-public-ip-address
 ```
 
-2. Replace the `image-id`,   `key-name`,   `security-group-ids`, and `subnet-id` with your own values.
+2. Replace the `image-id`,      `key-name`,      `security-group-ids`, and `subnet-id` with your own values.
 
 3. Run the command and your EC2 instance will be created.
 
@@ -166,4 +164,4 @@ aws ec2 describe-instances --instance-ids i-0a7f04d45f7a684bd
 aws ec2 terminate-instances --instance-ids i-0a7f04d45f7a684bd
 ```
 
-</details>
+:::

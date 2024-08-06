@@ -14,8 +14,7 @@ To create an AWS account, follow these steps: [Video Guide](https://www.youtube.
 
 ![image](/images/image36.png)
 
-<details>
-<summary>AWS CLI Instructions</summary>
+::: details 🥑 AWS CLI Instructions
 
 ### Set Up Your Development Environment
 
@@ -50,4 +49,4 @@ aws ec2 describe-instances
 
 If you see a list of EC2 instances in your account, your setup is complete.
 
-</details>
+:::

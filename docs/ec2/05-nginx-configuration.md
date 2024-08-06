@@ -40,7 +40,7 @@ cd /etc/nginx/sites-available
 sudo nano mywebapp
 ```
 
-4. In the Nano text editor, add the following configuration block for your web application: Be sure to replace `<your-domain>`,   `<subdomain>`, and `<APPLICATION_PORT>` with your actual domain name, subdomain, and application port. Take note of the highlighted lines in the code block below for customization.
+4. In the Nano text editor, add the following configuration block for your web application: Be sure to replace `<your-domain>`,    `<subdomain>`, and `<APPLICATION_PORT>` with your actual domain name, subdomain, and application port. Take note of the highlighted lines in the code block below for customization.
 
 ```nginx
 server {
@@ -93,7 +93,6 @@ sudo nginx -t
 sudo systemctl reload nginx
 ```
 
-
 ## Installing External SSL Certificates
 
 > [First time Domain Setup](/docs/cloudflare/00-cloudflare-overview)
@@ -101,8 +100,8 @@ sudo systemctl reload nginx
 If you are using an external SSL certificate provider, you will need to install the SSL certificate and key on your EC2 instance. You can do this by following these steps:
 
 1. Copy the SSL certificate and key files to your EC2 instance.
-  - If you are logged in to your EC2 instance, you can use the `scp` command to copy the files from your local machine to your EC2 instance. Replace `<path-to-cert>` and `<path-to-key>` with
-  - Using the `scp` command. Replace `<path-to-cert>` and `<path-to-key>` with the paths to your SSL certificate and key files.
+  + If you are logged in to your EC2 instance, you can use the `scp` command to copy the files from your local machine to your EC2 instance. Replace `<path-to-cert>` and `<path-to-key>` with
+  + Using the `scp` command. Replace `<path-to-cert>` and `<path-to-key>` with the paths to your SSL certificate and key files.
 
 ```bash
 scp -i <path-to-key-pair> <path-to-cert> ubuntu@<your-ec2-public-ip>:/etc/ssl/cert.pem
@@ -127,16 +126,9 @@ sudo nginx -t
 
 ![image](/images/image18.png)
 
-
-
 Before you can access your web application, you need to configure your domain name to point to your EC2 instance's public IP address. You can do this by updating the DNS records for your domain name in your DNS provider's control panel.
 
-
-
-
-
-
-<details>
+::: details 🥑 Configuring Route 53 for Your Domain
 <summary>Configuring Route 53 for Your Domain</summary>
 
 ### [optional] Configuring Route 53 for Your Domain
@@ -169,6 +161,6 @@ You will also need to update the nginx configuration file to use the Elastic IP 
 nslookup <subdomain>.<your-domain>.com
 ```
 
-</details>
+:::
 
 > Verify that your web application is accessible by visiting `https://<subdomain>.<your-domain>.com` in a web browser. You should see your web application running on your EC2 instance.

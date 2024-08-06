@@ -20,8 +20,7 @@ Before you get started, you will need the following:
 
 If you don't already have a Cloudflare account, you can create one by visiting the [Cloudflare website](https://www.cloudflare.com/) and signing up for an account. You will need to provide your email address and create a password to create an account.
 
-<details>
-<summary>Existing Domain</summary>
+::: details Existing Domain 
 
 ### Add Your Domain to Cloudflare
 
@@ -44,12 +43,12 @@ After adding your domain to Cloudflare, you will need to update your domain's na
 3. Update your domain's nameservers to the nameservers provided by Cloudflare. Cloudflare will display the nameservers you need to use in the Cloudflare dashboard.
 
 4. Save your changes and wait for the DNS changes to propagate. This process can take up to 24 hours to complete.
-</details>
+
+:::
 
 If you don't have an existing domain, you can register a new domain through Cloudflare by following these steps:
 
-<details>
-<summary>New Domain</summary>
+::: details New Domain
 
 ### Register a New Domain
 
@@ -61,7 +60,8 @@ If you don't have an existing domain, you can register a new domain through Clou
 > Note: Domain registration fees may apply. Cloudflare offers domain registration services in addition to DNS management and security services.
 
 5. Once your domain is registered, you can manage it through the Cloudflare dashboard.
-</details>
+
+:::
 
 ### Step 2: Customize Your DNS Settings
 

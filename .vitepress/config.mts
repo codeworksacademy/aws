@@ -40,26 +40,31 @@ export default defineConfig({
       {
         text: 'Getting Started',
         items: scanDir('docs/getting-started'),
-        collapsed: false
+        collapsed: true
       },
       {
-        text: 'EC2 - Elastic Compute Cloud',
+        text: '🆔 IAM - Identity',
+        items: scanDir('docs/iam'),
+        collapsed: true
+      },
+      {
+        text: '☁️ EC2 - Elastic Compute',
         items: scanDir('docs/ec2'),
         collapsed: false
       },
       {
-        text: 'S3 - Simple Storage Service',
+        text: '🗃️ S3 - Storage Buckets',
         items: scanDir('docs/s3'),
         collapsed: true
       },
       {
-        text: 'Cloudflare CDN',
+        text: '🔐 Cloudflare CDN',
         items: scanDir('docs/cloudflare'),
         collapsed: true
       },
       {
-        text: '🐳 Docker',
-        items: scanDir('docs/docker'),
+        text: '🐳 App Deployment',
+        items: scanDir('docs/app-deployment'),
         collapsed: true
       },
       {
@@ -69,10 +74,10 @@ export default defineConfig({
       },
 
     ],
-    // editLink: {
-    //   pattern: 'https://github.com/codeworksacademy/web-foundations/edit/main/:path',
-    //   text: 'Edit this page on GitHub'
-    // },
+    editLink: {
+      pattern: 'https://github.com/codeworksacademy/aws/edit/main/:path',
+      text: 'Edit this page on GitHub'
+    },
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/codeworksacademy' },

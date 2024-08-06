@@ -47,8 +47,7 @@ sudo systemctl status
 
 This command will show you the status of all the services running on your EC2 instance. You can use this information to troubleshoot any issues that may arise after the upgrade process.
 
-<details>
-<summary>Installing Services with apt</summary>
+::: details Installing Services with apt
 
 ## Installing Additional Services
 
@@ -84,4 +83,4 @@ You can also enable the service to start automatically when the EC2 instance boo
 sudo systemctl enable service-name
 ```
 
-</details>
+:::
