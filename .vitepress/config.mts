@@ -2,10 +2,9 @@ import { defineConfig } from 'vitepress'
 import { scanDir } from './utils/sidebar'
 
 
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-
-  vite: {},
   title: "CodeWorks Academy AWS Crash Course",
   description: "A quick guide to hosting web applications in AWS for CodeWorks Students",
   cleanUrls: false, // ANCHOR might break something later
@@ -45,7 +44,7 @@ export default defineConfig({
       {
         text: '🆔 IAM - Identity',
         items: scanDir('docs/iam'),
-        collapsed: true
+        collapsed: false
       },
       {
         text: '☁️ EC2 - Elastic Compute',
@@ -84,5 +83,8 @@ export default defineConfig({
       { icon: 'facebook', link: 'https://facebook.com/boisecodeworks' },
     ]
   },
-  lastUpdated: true
+  lastUpdated: true,
+  sitemap: {
+    hostname: 'https://codeworksacademy.com/aws/'
+  }
 })

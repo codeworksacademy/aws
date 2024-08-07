@@ -46,3 +46,11 @@ sudo systemctl start nginx
 5. Verify that Nginx is running by visiting your EC2 instance's public IP address in a web browser. You should see the default Nginx welcome page.
 
 ![nginx-welcome-page](/images/image69.png)
+
+## Great job!
+
+You have successfully set up an EC2 instance with Docker and Nginx. You can now host a web application on the EC2 instance. 
+
+Next, you can learn how to [Deploy your Web Application](/docs/app-deployment/00-ec2-webapp-deployment) to serve your application to the public internet. 
+
+

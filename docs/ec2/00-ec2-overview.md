@@ -1,26 +1,33 @@
-# Deploying a Web Application to AWS EC2
+# What is EC2?
 
-Amazon EC2 is a web service that provides resizable compute capacity in the cloud. It allows you to launch virtual servers, known as instances, on the AWS cloud infrastructure. EC2 instances can be used to run applications, host websites, store data, and a lot more.
+Amazon Elastic Compute Cloud (Amazon EC2) is a web service that provides resizable compute capacity in the cloud. It is designed to make web-scale cloud computing easier for developers. EC2 allows you to quickly scale up or down to handle changes in requirements or spikes in traffic. You can use EC2 to launch virtual servers, known as instances, on the AWS cloud.
 
-In this guide, we will cover the basic features of launching an EC2 instance using the [linux](https://www.youtube.com/watch?v=42iQKuQodW4) distro ubuntu. We also cover how to connect to this server using your command line and a special key file that you will download from aws when setting up your instance. 
+## Key Features of EC2
 
-We will then cover how to install [docker](https://www.youtube.com/watch?v=Gjnup-PuquQ) on this instance how to setup a reverse proxy with [nginx](https://www.youtube.com/watch?v=JKxlsvZXG7c). 
+One of the best things about EC2 is its flexibility and your ownership of the virtual server. You can choose the instance type, operating system, and software that best fits your needs.
 
-Finally, we will cover how to deploy a web application to this server using [github actions](https://www.youtube.com/watch?v=URmeTqglS58) and [dockerhub](https://hub.docker.com/).
+As a sandbox environment, you can experiment with different configurations and settings without affecting your production environment. You can also create custom AMIs (Amazon Machine Images) to save time when launching new instances. Even if you don't have a lot of experience with cloud computing, EC2 is easy to use and offers a wide range of features to help you get started.
 
+### Scalability
 
-## Assumptions
+EC2 allows you to scale your compute capacity up or down based on your needs. You can launch instances in minutes and quickly scale your infrastructure to meet demand.
 
-This guide assumes you have the following:
+### Flexibility
 
-- Using AWS’s Free Tier/Trial opportunities for new & existing accounts
-- Utilizing the latest version of `bcw` (*3.5.1 as of this writing*)
-  - Run `npm i -g bcw` to globally install the latest version
-- You have a web application that you want to deploy to an EC2 instance
-- You have a basic understanding of web development and the command line
-- You have a basic understanding of Git and GitHub
-- You have a basic understanding of package managers like npm or yarn
+EC2 provides a wide selection of instance types optimized for different use cases. You can choose the instance type that best fits your workload, whether it's compute-optimized, memory-optimized, storage-optimized, or GPU-optimized.
 
-> ⚠️ NOTES
-> Commands with surrounding `< >` indicate a variable where you supply the value. 
-> Do not include the `< >` characters.
+### Security
+
+EC2 instances are secure by default. You can use security groups and network access control lists to control inbound and outbound traffic to your instances. You can also use AWS Identity and Access Management (IAM) to manage access to your resources.
+
+### Reliability
+
+EC2 provides a highly reliable environment where instances are automatically distributed across multiple Availability Zones to ensure fault tolerance. You can also use Auto Scaling to automatically adjust the number of instances based on demand.
+
+### Cost-Effective
+
+EC2 offers a pay-as-you-go pricing model, where you only pay for the compute capacity you use. You can choose from On-Demand Instances, Reserved Instances, and Spot Instances to optimize costs based on your workload.
+
+## How we are going to use EC2
+
+In this course, we will use EC2 to launch virtual servers on the AWS cloud. We will create and manage EC2 instances to host web applications, databases, and other services. We will also learn how to secure our instances, monitor their performance, and optimize costs. By the end of this course, you will have the skills and knowledge to use EC2 to build and deploy web applications on the AWS cloud.

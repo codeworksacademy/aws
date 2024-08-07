@@ -51,7 +51,7 @@ ubuntu@ip-172-31-12-34:~$
 
 You can now run commands on your EC2 instance just like you would on your local machine.
 
-## First Time Connection Troubleshooting
+::: details 🚨 Common Connection Troubleshooting
 
 If you are having trouble connecting to your EC2 instance for the first time, here are some common issues and solutions:
 
@@ -60,3 +60,4 @@ If you are having trouble connecting to your EC2 instance for the first time, he
 * **Connection Timeout** - If you are unable to connect to your EC2 instance and see a `Connection timed out` error, check that the security group associated with your EC2 instance allows inbound SSH traffic on port 22.
 
 * **Incorrect IP Address** - If you are unable to connect to your EC2 instance and see a `Name or service not known` error, double-check the public IP address or DNS name of your EC2 instance.
+:::
