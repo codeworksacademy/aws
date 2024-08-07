@@ -238,3 +238,56 @@ TOixRYXBimh4WerZG08zZMt22YcA/+32D2Bfh23iAMmV4p0sAEzJRt8=
 * Make sure your REPO_NAME matches the name of your dockerhub image in the `docker-compose.yml`.
 
 :::
+
+
+## Step 3: Trigger Deployment
+
+To trigger the deployment of your application, push a commit to the `main` branch with a commit message containing the word `deploy`. This will trigger the `Docker Build` workflow, which will build and push the Docker image to DockerHub. Once the build is successful, the `Deploy to EC2` workflow will be triggered automatically.
+
+```bash
+git add .
+git commit -m "deploy: build and push docker image"
+git push origin main
+```
+
+::: details 🚨 Common Deployment Issues
+
+### Problems with build.yml
+
+* When pushing to the `main` branch, make sure your commit message contains the word `deploy`.
+* Make sure your DockerHub credentials and EC2 SSH key are correctly configured in GitHub Secrets.
+* Make sure your Docker image is successfully built and pushed to DockerHub.
+* If the deployment fails, check the logs of the GitHub Actions workflows for any errors.
+  - client build errors
+    - Make sure your client application is correctly configured and builds successfully.
+    - Make sure your client application is in the `client` directory.
+    - Make sure your client application has the necessary dependencies installed. Check for optional dependencies that may be missing.
+    - Make sure your client application has the correct build script in the `package.json`.
+    - Make sure build outputs are going to the correct directory. Check `dist` directory.
+
+::: code-group
+
+```json [client/package.json]
+"scripts": {
+  "build": "vite build",
+},
+```
+
+```js [client/vite.config.js]
+export default defineConfig({
+  build: {
+    outDir: 'dist',
+  },
+})
+```
+
+
+### Problems with deploy.yml
+
+* Make sure your `docker-compose.yml` file is correctly configured and contains the correct image name.
+* Make sure your EC2 instance is running and accessible via SSH.
+* Make sure your EC2 instance has the necessary permissions to pull the Docker image from DockerHub.
+* Make sure your environment file is correctly configured and referenced in the `docker-compose.yml`.
+* Make sure the ec2 instance has available storage space for the docker images.
+
+:::
