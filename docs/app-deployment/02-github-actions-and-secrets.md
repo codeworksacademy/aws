@@ -31,7 +31,7 @@ bcw add
 
 ![bcw-add](/images/image47.png)
 
-This will create a `.github/workflows` directory with two files `build.yml` and `deploy.yml`.
+This will create a `.github/workflows` directory with two files `build.yml` and `deploy.yml` .
 
 Your directory structure should now look like this:
 
@@ -67,6 +67,7 @@ jobs:
     if: contains(github.event.head_commit.message, 'deploy')
 
     steps:
+
       - name: Checkout Repository 👀
         uses: actions/checkout@v4
 
@@ -82,6 +83,7 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
           
+
       - name: Build and Push Docker Image 🐋
         uses: docker/build-push-action@v5
         with:
@@ -89,6 +91,7 @@ jobs:
           file: server/Dockerfile
           context: .
           push: true
+
 ```
 
 ```yaml [deploy.yml]
@@ -146,11 +149,9 @@ jobs:
 
 :::
 
-
-
 ::: details 📝 build.yml
 
-> To trigger this workflow, you need to push to the `main` branch with a commit message containing the word `deploy`.
+> To trigger this workflow, you need to push to the `main` branch with a commit message containing the word `deploy` .
 
 The `build.yml` file contains the instructions to build and push the Docker image to DockerHub. The workflow is triggered on a push event to the `main` branch. It checks if the commit message contains the word `deploy` before running the workflow.
 
@@ -188,5 +189,52 @@ The workflow consists of the following steps:
 
 :::
 
-
 ## Step 2: Configure GitHub Secrets
+
+To securely store sensitive information like your DockerHub credentials and EC2 SSH key, you can use GitHub Secrets. GitHub Secrets allow you to store encrypted variables that can be used in your GitHub Actions workflows.
+
+To configure GitHub Secrets, follow these steps:
+
+1. Go to your GitHub repository and click on `Settings`.
+
+![gh-settings](/images/gh1.png)
+
+2. In the left sidebar, click on `Secrets`.
+  + eg. `https://github.com/<username>/<repo>/settings/secrets/actions`
+
+3. Click on `New repository secret`.
+
+![gh-settings](/images/gh2.png)
+
+4. Add the following secrets:
+  + `DOCKER_USERNAME`: Your DockerHub username.
+  + `DOCKER_PASSWORD`: Your DockerHub Personal Access Token (PAT).
+  + `EC2_IP_ADDRESS`: The public IP address of your EC2 instance.
+  + `EC2_USERNAME`: The username to SSH into your EC2 instance.
+  + `EC2_PEM_KEY`: The private key file used to SSH into your EC2 instance.
+  + `REPO_NAME`: The name of your repository.
+  + `ENV_FILE`: The name of your environment file (if applicable).
+
+![gh-settings](/images/gh3.png)
+
+::: details 🚨 Common Mistakes with Secrets
+
+* When adding the `EC2_PEM_KEY` secret, make sure to paste the contents of the private key file, not the file path. Also be sure to include the entire contents. Do not add any extra spaces or newlines  
+```pem
+-----BEGIN RSA PRIVATE KEY-----
+gUd+NtBQ5Dbqgmm9tpaTDMkBK/4fE1omFP8eQAmlUvNObbFvSKHrnBO/3kIG9xWg
+...
+fwcHunQtkbR1y124xcit6ZXdfQBFHPYh80kkbO6WcqnkBXfSEgb9fQ3TeW0937O7
+TOixRYXBimh4WerZG08zZMt22YcA/+32D2Bfh23iAMmV4p0sAEzJRt8=
+-----END RSA PRIVATE KEY-----
+```
+
+* When adding the `DOCKER_PASSWORD` secret, make sure to use your DockerHub Personal Access Token (PAT) and not your DockerHub password.
+* Do not share your GitHub Secrets with anyone or store them in your codebase.
+* Do not commit your GitHub Secrets to your version control system.
+* Do not hardcode your GitHub Secrets in your scripts.
+* Make sure your EC2_IP_ADDRESS is the public IP address of your EC2 instance.
+* Make sure your EC2_USERNAME is the username you use to SSH into your EC2 instance. This is usually `ubuntu` for Ubuntu instances.
+* Make sure your REPO_NAME matches the name of your dockerhub image in the `docker-compose.yml`.
+
+:::
