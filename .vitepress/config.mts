@@ -1,8 +1,6 @@
 import { defineConfig } from 'vitepress'
 import { scanDir } from './utils/sidebar'
 
-
-
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "CodeWorks Academy AWS Crash Course",
