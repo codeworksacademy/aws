@@ -39,4 +39,4 @@ Cloudflare provides free SSL certificates for all domains added to Cloudflare. S
 
 ![image](/images/image1.png)
 
-> ⚠️ (Keep this page open until everything in this stage is complete)
+> ⚠️ (Save these values in a secure location, you will need to [install them to your ec2 instance](/docs/app-deployment/03-nginx-configuration.md#installing-external-ssl-certificates) later)
