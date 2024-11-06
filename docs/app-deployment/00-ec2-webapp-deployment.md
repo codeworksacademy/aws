@@ -1,5 +1,7 @@
 # Deploying a Web Application to AWS EC2
 
+<video title="Aws App Deployment Guide" src="https://codeworkslearn.blob.core.windows.net/67055fc0d9284350c2a6c189/aws-classroom.mp4"></video>
+
 Amazon EC2 is a web service that provides resizable compute capacity in the cloud. It allows you to launch virtual servers, known as instances, on the AWS cloud infrastructure. EC2 instances can be used to run applications, host websites, store data, and a lot more.
 
 In this guide, we will cover the basic features of launching an EC2 instance using the [linux](https://www.youtube.com/watch?v=42iQKuQodW4) distro ubuntu. We also cover how to connect to this server using your command line and a special key file that you will download from aws when setting up your instance. 
