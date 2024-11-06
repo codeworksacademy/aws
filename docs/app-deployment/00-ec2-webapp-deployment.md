@@ -1,6 +1,6 @@
 # Deploying a Web Application to AWS EC2
 
-<video title="Aws App Deployment Guide" src="https://codeworkslearn.blob.core.windows.net/67055fc0d9284350c2a6c189/aws-classroom.mp4" controls style="height: 600px;"></video>
+<video title="Aws App Deployment Guide" src="https://codeworkslearn.blob.core.windows.net/67055fc0d9284350c2a6c189/aws-classroom.mp4" controls style="height: 600px;" poster="https://sandbox.codeworksacademy.com/api/posters/cw?text=AWS App Deployment"></video>
 
 Amazon EC2 is a web service that provides resizable compute capacity in the cloud. It allows you to launch virtual servers, known as instances, on the AWS cloud infrastructure. EC2 instances can be used to run applications, host websites, store data, and a lot more.
 
